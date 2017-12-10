@@ -2,9 +2,23 @@
 
 const Funnel = require('broccoli-funnel');
 const mergeTrees = require('broccoli-merge-trees');
+const fastbootTransform = require('fastboot-transform');
 
 module.exports = {
 	name: 'ember-cli-pushjs',
+	options: {
+		nodeAssets: {
+			'push-fcm-plugin': {
+				vendor: {
+					srcDir: 'bin',
+					include: ['push.fcm.js'],
+					processTree(input) {
+						return fastbootTransform(input);
+					}
+				}
+			}
+		}
+	},
 
 	included() {
 		this._super.included.apply(this, arguments);
@@ -12,7 +26,8 @@ module.exports = {
 
 		this.import('vendor/shims/push.js');
 		this.import('node_modules/push.js/bin/push.js');
-		this.import('node_modules/push-fcm-plugin/bin/push.fcm.js');
+		this.import('node_modules/firebase/firebase.js');
+		this.import('vendor/push-fcm-plugin/push.fcm.js');
 	},
 
 	treeForPublic(tree) {
