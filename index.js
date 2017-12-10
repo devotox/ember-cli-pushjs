@@ -12,7 +12,6 @@ module.exports = {
 
 		this.import('vendor/shims/push.js');
 		this.import('node_modules/push.js/bin/push.js');
-		this.import('node_modules/firebase/firebase.js');
 		this.import('node_modules/push-fcm-plugin/bin/push.fcm.js');
 	},
 

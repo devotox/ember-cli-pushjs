@@ -42,7 +42,6 @@
   "dependencies": {
     "ember-cli-babel": "^6.6.0",
     "push-fcm-plugin": "^0.0.2",
-    "firebase": "^4.8.0",
     "push.js": "^1.0.5"
   },
   "devDependencies": {
