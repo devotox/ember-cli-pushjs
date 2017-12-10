@@ -1,0 +1,1 @@
+importScripts("https://www.gstatic.com/firebasejs/4.1.2/firebase-app.js"),importScripts("https://www.gstatic.com/firebasejs/4.1.2/firebase-messaging.js"),firebase.apps.length>0&&firebase.messaging(),self.addEventListener("message",function(s){0===firebase.apps.length&&(firebase.initializeApp(s.data),firebase.messaging()),s.ports[0].postMessage(s.data)})
