@@ -42,3 +42,6 @@ notifications:
     on_start: always
     on_cancel: always
     on_error: always
+  slack:
+    rooms:
+      secure: Iow+t6PxSdOWATEgcWjN9tNCFdnaDi87LbQcOZHqwutYs9jmXe6vszMmqRRKaiUTHQN/uSRZ6CrxEjC9vD9IaBSRORi8UcnXlZ+C0cfcbuiAdb4SWXKoXssGdZMdmS8fl+LRA7UGGfy//OwKAgr71Z/Re/WGRiqhM89vvVgOzkhpglA/gYUM5RYyu1FC+IEwE3NpHWYgtq0gtbvWso2V5C7Uqv8OfUJAckgcfyrm7lpSzY6XJiRiN6fAKJGxTg56BnQF0IpZKjL66jUbMSlnYkvlV/dMBX15NIvEwN4ZnQfkfitNipEvmGKkOJgQeNMp52fgP5J57esSCgWM0o2vhDJZbJWSgZsV2ZQzFHifmSUysmWYoouN/vi6I1lmQ9yGslkzn1gFxRTZjmbc55dLclmKyOtKufhEl/jyHaHoqDGVT2Yb2+8sNP2NTlERdsVF1/uBg+jU+/wIvFaF44qibswRK+m5FB3jnNl7exx+s8fHqvk5GH8NgI7oPwKI4+nwi++HvBBJHxsulrpFn3ALklvIF+eSRwso1LTFVk7EHJUt7SeLhKY2PXh7U9OlFuuNp2c3sq8h+f8dliv2u3GuyteAW+zbTVU7bA6rXYOHWoSqlzf3JB8/D70lCwEm768dyh7APz/xgJdC3vZGm8kChxQB+EWGH7aeWowSZxa+JxM=
