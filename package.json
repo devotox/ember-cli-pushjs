@@ -1,31 +1,56 @@
 {
   "name": "ember-cli-pushjs",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "1.0.0",
+  "description": "Ember CLI Wrapper around Push.js for system notifications",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "utilities",
+    "services",
+    "mixins"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Devonte Emokpae",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/devotox/ember-cli-utilities",
   "scripts": {
     "build": "ember build",
-    "start": "ember serve",
-    "test": "ember try:each"
+    "start": "ember server",
+    "test": "ember try:each",
+    "precommit": "lint-staged",
+    "update": "ncu -u -a; yarn",
+    "postrelease": "npm publish",
+    "release": "npm version patch",
+    "release-patch": "npm version patch",
+    "release-minor": "npm version minor",
+    "release-major": "npm version major",
+    "postversion": "git push && git push --tags",
+    "deploy:release": "npm run release; npm run deploy",
+    "deploy:setup": "git add -A; git commit -m \"Added ember-cli-github-pages addon\"; git checkout --orphan gh-pages; rm -rf `bash -c \"ls -a | grep -vE '.gitignore|.git|node_modules|bower_components|([.]{1,2}/?$)'\"`; touch .gitkeep; git add -A; git commit -m \"initial gh-pages commit\"; git checkout master",
+    "deploy": "ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\"; git push origin gh-pages; git checkout master",
+    "format": "find app addon config tests -name '*.js' -type f | xargs prettier --write | xargs eslint --fix"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "ember-cli-babel": "^6.6.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
+    "broccoli-funnel": "^2.0.1",
+    "broccoli-merge-trees": "^2.0.0",
     "ember-ajax": "^3.0.0",
-    "ember-cli": "~2.18.0-beta.1",
+    "ember-cli": "~2.17.0",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.2.1",
+    "ember-cli-github-pages": "^0.1.2",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
@@ -37,14 +62,18 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.0.0",
-    "ember-source": "~2.18.0-beta.1",
-    "eslint-plugin-ember": "^5.0.0",
-    "loader.js": "^4.2.3"
+    "ember-source": "~2.17.0",
+    "eslint-plugin-ember": "^5.0.1",
+    "firebase": "^4.8.0",
+    "loader.js": "^4.2.3",
+    "push-fcm-plugin": "^0.0.2",
+    "push.js": "^1.0.5"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "https://devotox.github.io/ember-cli-pushjs"
   }
 }
