@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-pushjs",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Ember CLI Wrapper around Push.js for system notifications",
   "keywords": [
     "ember-addon",
