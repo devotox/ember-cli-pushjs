@@ -30,7 +30,7 @@ module.exports = {
 		this.import('vendor/push-fcm-plugin/push.fcm.js');
 	},
 
-	treeForPublic(tree) {
+	treeForPublic() {
 		let push = new Funnel('node_modules/push.js/bin', {
 			include: ['serviceWorker.js'],
 			destDir: 'push.js'
