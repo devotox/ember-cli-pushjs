@@ -1,48 +1,53 @@
----
 language: node_js
 node_js:
-  # we recommend testing addons with the same minimum supported node version as Ember CLI
-  # so that your addon works for all apps
-  - "4"
-
+- '6'
 sudo: false
 dist: trusty
-
 addons:
   chrome: stable
-
 cache:
-  yarn: true
-
+  directories:
+  - '$HOME/.npm'
+  - '$HOME/.cache'
+  - '$HOME/.yarn-cache'
 env:
+  matrix:
+  - EMBER_TRY_SCENARIO=ember-lts-2.12
+  - EMBER_TRY_SCENARIO=ember-lts-2.16
+  - EMBER_TRY_SCENARIO=ember-lts-2.18
+  - EMBER_TRY_SCENARIO=ember-release
+  - EMBER_TRY_SCENARIO=ember-beta
+  - EMBER_TRY_SCENARIO=ember-canary
+  - EMBER_TRY_SCENARIO=ember-default
   global:
     # See https://git.io/vdao3 for details.
     - JOBS=1
-  matrix:
-    # we recommend new addons test the current and previous LTS
-    # as well as latest stable release (bonus points to beta/canary)
-    - EMBER_TRY_SCENARIO=ember-lts-2.12
-    - EMBER_TRY_SCENARIO=ember-lts-2.16
-    - EMBER_TRY_SCENARIO=ember-lts-2.18
-    - EMBER_TRY_SCENARIO=ember-release
-    - EMBER_TRY_SCENARIO=ember-beta
-    - EMBER_TRY_SCENARIO=ember-canary
-    - EMBER_TRY_SCENARIO=ember-default
-
+    secure: fOTO/HpUT0xsfml9iXuEL9qBu0NVErcig6CmrS1DFv7f4x9/mYQMNzLUv5b6VBPqGHeFNHiGaUUza3Ufc5KpL7DOu/1y6TFQlSoM6MRRdIXb+50MObvkJ4wXwYJH7Zrb4g8RTaBOY9uU5XQkm/E6GWWF3NiYFoVzCYPNSgAALko1caoEX2hoJNXJSd0T4G+gxtxc2g08RGunBPLqIyy2avMRN4yq0WDN2NbBrztM01FA5RoOLPyX0hhzyIZ+45z34wKvZtu7rj9h1KbFOZOVFJWpHDa0bXxhF63ldxPINe2QMOSsOD22Czk1+IKyC+88gtkvUq7pGUaJK6YdVDRcW9G/DMHVy/IE2aFabrPDVgzrmeCoVKzATzt8nMfIMTTu9Unoa5fdohpJ0NPhYnPfVAGfJ+2MPITgP+x2X6M5+KgHCBdaIgwBVnZE9DTb1L9c/Eh50zeHHbfv9L+NVlbQFzMWNj+kKWMj0qwh6JPpSFiKaOvTK6XP+NSUc7euAZgqK6lwqS07pvcql4qvzbeRWyn/GZuRHOGvfkUNuvLee8dMKfpF3s1VQ6blHHqKB8qH2ifxawiztWgUkYxK0GFTk//ZopLzP90bLl0JiGlg517tp5V9eBOK5ZlPwsSOhD+wta9gCssPjK4i2H2IwLox7AqXegigBMdqIbXz9LaFVAY=
 matrix:
   fast_finish: true
   allow_failures:
-    - env: EMBER_TRY_SCENARIO=ember-canary
-
+  - env: EMBER_TRY_SCENARIO=ember-canary
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
-  - export PATH=$HOME/.yarn/bin:$PATH
-
-install:
-  - yarn install --no-lockfile --non-interactive
-
+- npm config set spin false
+- npm install -g npm@4
+- npm install -g yarn
+- npm --version
+- npm install -g greenkeeper-lockfile@1
+- npm install -g codecov
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
 script:
-  - yarn lint:js
-  # Usually, it's ok to finish the test scenario without reverting
-  #  to the addon's original dependency state, skipping "cleanup".
-  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO --skip-cleanup
+- COVERAGE=true node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO --skip-cleanup
+- codecov
+notifications:
+  webhooks:
+    urls:
+    - https://webhook.atomist.com/travis
+    on_success: always
+    on_failure: always
+    on_start: always
+    on_cancel: always
+    on_error: always
+  slack:
+    rooms:
+      secure: Iow+t6PxSdOWATEgcWjN9tNCFdnaDi87LbQcOZHqwutYs9jmXe6vszMmqRRKaiUTHQN/uSRZ6CrxEjC9vD9IaBSRORi8UcnXlZ+C0cfcbuiAdb4SWXKoXssGdZMdmS8fl+LRA7UGGfy//OwKAgr71Z/Re/WGRiqhM89vvVgOzkhpglA/gYUM5RYyu1FC+IEwE3NpHWYgtq0gtbvWso2V5C7Uqv8OfUJAckgcfyrm7lpSzY6XJiRiN6fAKJGxTg56BnQF0IpZKjL66jUbMSlnYkvlV/dMBX15NIvEwN4ZnQfkfitNipEvmGKkOJgQeNMp52fgP5J57esSCgWM0o2vhDJZbJWSgZsV2ZQzFHifmSUysmWYoouN/vi6I1lmQ9yGslkzn1gFxRTZjmbc55dLclmKyOtKufhEl/jyHaHoqDGVT2Yb2+8sNP2NTlERdsVF1/uBg+jU+/wIvFaF44qibswRK+m5FB3jnNl7exx+s8fHqvk5GH8NgI7oPwKI4+nwi++HvBBJHxsulrpFn3ALklvIF+eSRwso1LTFVk7EHJUt7SeLhKY2PXh7U9OlFuuNp2c3sq8h+f8dliv2u3GuyteAW+zbTVU7bA6rXYOHWoSqlzf3JB8/D70lCwEm768dyh7APz/xgJdC3vZGm8kChxQB+EWGH7aeWowSZxa+JxM=

@@ -1,3 +1,27 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2 id="title">Ember CLI Push JS</h2>
 
-{{outlet}}
+<label>Timeout</label>
+<br/>
+{{input type=text value=timeout}}
+<br/>
+
+<br/>
+<label>Icon</label>
+<br/>
+{{input type=text value=icon}}
+<br/>
+
+<br/>
+<label>Title</label>
+<br/>
+{{input type=text value=title}}
+<br/>
+
+<br/>
+<label>Body</label>
+<br/>
+{{input type=text value=body}}
+<br/>
+
+<br/>
+<button {{action 'notify'}}>Notify</button>
