@@ -96,6 +96,10 @@ acorn@^5.2.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.2.1.tgz#317ac7821826c22c702d66189ab8359675f135d7"
 
+acorn@^5.5.0:
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
+
 after@0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/after/-/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
@@ -2049,6 +2053,12 @@ doctrine@^2.0.2:
   dependencies:
     esutils "^2.0.2"
 
+doctrine@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.1.0.tgz#5cd01fc101621b42c4cd7f5d1a66243716d3f39d"
+  dependencies:
+    esutils "^2.0.2"
+
 dom-storage@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/dom-storage/-/dom-storage-2.0.2.tgz#ed17cbf68abd10e0aef8182713e297c5e4b500b0"
@@ -2151,9 +2161,9 @@ ember-cli-eslint@^4.2.1:
     rsvp "^4.6.1"
     walk-sync "^0.3.0"
 
-ember-cli-fastboot@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-fastboot/-/ember-cli-fastboot-1.1.0.tgz#08bb3b7a2fdaaab6db5b2ae7e59db792c53db690"
+ember-cli-fastboot@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/ember-cli-fastboot/-/ember-cli-fastboot-1.1.3.tgz#2ca968beaefd6f45e021242b6fe9d74d213f5045"
   dependencies:
     broccoli-concat "^3.2.2"
     broccoli-funnel "^2.0.0"
@@ -2161,12 +2171,14 @@ ember-cli-fastboot@^1.1.0:
     broccoli-plugin "^1.2.1"
     chalk "^2.0.1"
     ember-cli-babel "^6.7.2"
-    ember-cli-version-checker "^2.0.0"
-    fastboot "^1.1.0"
+    ember-cli-lodash-subset "2.0.1"
+    ember-cli-preprocess-registry "^3.1.0"
+    ember-cli-version-checker "^2.1.0"
+    fastboot "^1.1.3"
     fastboot-express-middleware "^1.1.0"
-    fs-extra "^4.0.0"
+    fastboot-transform "^0.1.2"
+    fs-extra "^4.0.2"
     json-stable-stringify "^1.0.1"
-    lodash.uniq "^4.2.0"
     md5-hex "^2.0.0"
     silent-error "^1.0.0"
 
@@ -2208,13 +2220,13 @@ ember-cli-is-package-missing@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ember-cli-is-package-missing/-/ember-cli-is-package-missing-1.0.0.tgz#6e6184cafb92635dd93ca6c946b104292d4e3390"
 
+ember-cli-lodash-subset@2.0.1, ember-cli-lodash-subset@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-lodash-subset/-/ember-cli-lodash-subset-2.0.1.tgz#20cb68a790fe0fde2488ddfd8efbb7df6fe766f2"
+
 ember-cli-lodash-subset@^1.0.7:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/ember-cli-lodash-subset/-/ember-cli-lodash-subset-1.0.12.tgz#af2e77eba5dcb0d77f3308d3a6fd7d3450f6e537"
-
-ember-cli-lodash-subset@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/ember-cli-lodash-subset/-/ember-cli-lodash-subset-2.0.1.tgz#20cb68a790fe0fde2488ddfd8efbb7df6fe766f2"
 
 ember-cli-node-assets@^0.2.2:
   version "0.2.2"
@@ -2623,6 +2635,53 @@ eslint-scope@^3.7.1:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
+eslint-visitor-keys@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
+
+eslint@4.19.1:
+  version "4.19.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
+  dependencies:
+    ajv "^5.3.0"
+    babel-code-frame "^6.22.0"
+    chalk "^2.1.0"
+    concat-stream "^1.6.0"
+    cross-spawn "^5.1.0"
+    debug "^3.1.0"
+    doctrine "^2.1.0"
+    eslint-scope "^3.7.1"
+    eslint-visitor-keys "^1.0.0"
+    espree "^3.5.4"
+    esquery "^1.0.0"
+    esutils "^2.0.2"
+    file-entry-cache "^2.0.0"
+    functional-red-black-tree "^1.0.1"
+    glob "^7.1.2"
+    globals "^11.0.1"
+    ignore "^3.3.3"
+    imurmurhash "^0.1.4"
+    inquirer "^3.0.6"
+    is-resolvable "^1.0.0"
+    js-yaml "^3.9.1"
+    json-stable-stringify-without-jsonify "^1.0.1"
+    levn "^0.3.0"
+    lodash "^4.17.4"
+    minimatch "^3.0.2"
+    mkdirp "^0.5.1"
+    natural-compare "^1.4.0"
+    optionator "^0.8.2"
+    path-is-inside "^1.0.2"
+    pluralize "^7.0.0"
+    progress "^2.0.0"
+    regexpp "^1.0.1"
+    require-uncached "^1.0.3"
+    semver "^5.3.0"
+    strip-ansi "^4.0.0"
+    strip-json-comments "~2.0.1"
+    table "4.0.2"
+    text-table "~0.2.0"
+
 eslint@^4.0.0:
   version "4.13.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.13.0.tgz#1991aa359586af83877bde59de9d41f53e20826d"
@@ -2670,6 +2729,13 @@ espree@^3.5.2:
   resolved "https://registry.yarnpkg.com/espree/-/espree-3.5.2.tgz#756ada8b979e9dcfcdb30aad8d1a9304a905e1ca"
   dependencies:
     acorn "^5.2.1"
+    acorn-jsx "^3.0.0"
+
+espree@^3.5.4:
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/espree/-/espree-3.5.4.tgz#b0f447187c8a8bed944b815a660bddf5deb5d1a7"
+  dependencies:
+    acorn "^5.5.0"
     acorn-jsx "^3.0.0"
 
 esprima@^4.0.0:
@@ -2946,9 +3012,22 @@ fastboot-transform@^0.1.2:
   dependencies:
     broccoli-stew "^1.5.0"
 
-fastboot@^1.1.0, fastboot@^1.1.2:
+fastboot@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/fastboot/-/fastboot-1.1.2.tgz#1cb4b6423aacc4339fbf003cc7b6ecabd3083dfa"
+  dependencies:
+    chalk "^2.0.1"
+    cookie "^0.3.1"
+    debug "^3.0.0"
+    exists-sync "0.0.4"
+    najax "^1.0.2"
+    rsvp "^4.7.0"
+    simple-dom "^1.0.0"
+    source-map-support "^0.5.0"
+
+fastboot@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/fastboot/-/fastboot-1.1.3.tgz#56c5f56415c5ae8de2db539c0d3ecbcd65538f8b"
   dependencies:
     chalk "^2.0.1"
     cookie "^0.3.1"
@@ -3194,7 +3273,7 @@ fs-extra@^2.0.0:
     graceful-fs "^4.1.2"
     jsonfile "^2.1.0"
 
-fs-extra@^4.0.0, fs-extra@^4.0.2, fs-extra@^4.0.3:
+fs-extra@^4.0.2, fs-extra@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
   dependencies:
@@ -5590,6 +5669,10 @@ regex-not@^1.0.0, regex-not@^1.0.2:
     extend-shallow "^3.0.2"
     safe-regex "^1.1.0"
 
+regexpp@^1.0.1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-1.1.0.tgz#0e3516dd0b7904f413d2d4193dce4618c3a689ab"
+
 regexpu-core@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/regexpu-core/-/regexpu-core-2.0.0.tgz#49d038837b8dcf8bfa5b9a42139938e6ea2ae240"
@@ -6314,7 +6397,7 @@ symlink-or-copy@^1.0.0, symlink-or-copy@^1.0.1, symlink-or-copy@^1.1.8:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/symlink-or-copy/-/symlink-or-copy-1.1.8.tgz#cabe61e0010c1c023c173b25ee5108b37f4b4aa3"
 
-table@^4.0.1:
+table@4.0.2, table@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/table/-/table-4.0.2.tgz#a33447375391e766ad34d3486e6e2aedc84d2e36"
   dependencies:
