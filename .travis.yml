@@ -6,10 +6,7 @@ dist: trusty
 addons:
   chrome: stable
 cache:
-  directories:
-  - '$HOME/.npm'
-  - '$HOME/.cache'
-  - '$HOME/.yarn-cache'
+  yarn: true
 env:
   matrix:
   - EMBER_TRY_SCENARIO=ember-lts-2.12
