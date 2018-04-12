@@ -30,7 +30,7 @@ before_install:
 - yarn global add greenkeeper-lockfile@1
 - yarn global add codecov
 install:
-- yarn install --no-lockfile --non-interactive
+- yarn install --no-lockfile --non-interactive --dev
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 script:
