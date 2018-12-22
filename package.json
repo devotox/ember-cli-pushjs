@@ -45,9 +45,6 @@
     "broccoli-merge-trees": "^3.0.1",
     "ember-cli-babel": "^6.16.0",
     "ember-cli-node-assets": "^0.2.2",
-    "fastboot-transform": "^0.1.3",
-    "firebase": "^5.3.1",
-    "push-fcm-plugin": "^0.0.2",
     "push.js": "^1.0.7"
   },
   "devDependencies": {
