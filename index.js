@@ -1,15 +1,11 @@
 'use strict';
 
+const { name } = require('./package');
 const Funnel = require('broccoli-funnel');
 const mergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
-	name: 'ember-cli-pushjs',
-	options: {
-		nodeAssets: {
-		}
-	},
-
+	name,
 	included() {
 		this._super.included.apply(this, arguments);
 		this._ensureThisImport();
