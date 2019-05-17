@@ -3,8 +3,8 @@
 [![Coverage Status](https://codecov.io/gh/devotox/ember-cli-pushjs/branch/master/graph/badge.svg)](https://codecov.io/gh/devotox/ember-cli-pushjs)
 [![NPM Version](https://badge.fury.io/js/ember-cli-pushjs.svg)](http://badge.fury.io/js/ember-cli-pushjs)
 [![NPM Downloads](https://img.shields.io/npm/dm/ember-cli-pushjs.svg)](https://www.npmjs.org/package/ember-cli-pushjs)
-[![Dependency Status](https://david-dm.org/poetic/ember-cli-pushjs.svg)](https://david-dm.org/poetic/ember-cli-pushjs)
-[![DevDependency Status](https://david-dm.org/poetic/ember-cli-pushjs/dev-status.svg)](https://david-dm.org/poetic/ember-cli-pushjs#info=devDependencies)
+[![Dependency Status](https://david-dm.org/devotox/ember-cli-pushjs.svg)](https://david-dm.org/devotox/ember-cli-pushjs)
+[![DevDependency Status](https://david-dm.org/devotox/ember-cli-pushjs/dev-status.svg)](https://david-dm.org/devotox/ember-cli-pushjs#info=devDependencies)
 [![Greenkeeper](https://badges.greenkeeper.io/devotox/ember-cli-pushjs.svg)](https://greenkeeper.io/)
 
 ember-cli-pushjs
@@ -13,7 +13,7 @@ ember-cli-pushjs
 Simple Wrapper around [Push JS](https://github.com/Nickersoft/push.js).
 This provides a service that can be used to send system / web notifications
 
-[DEMO](http://devotox.github.io/ember-cli-pushjs)
+[DEMO](https://devotox.github.io/ember-cli-pushjs)
 
 Installation
 ------------------------------------------------------------------------------
