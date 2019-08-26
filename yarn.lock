@@ -6280,10 +6280,10 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-push.js@1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/push.js/-/push.js-1.0.9.tgz#926e1612a89dca741ebc93bed8aa305bd9bbcfc6"
-  integrity sha512-VpOfRUWoiRVuKSjNWxJx+4d6bLCK8U+mId7kwQ8k4F66UVTC93oycI539A3Ve5ghx3CGpHxNyf/NVAwqeg4Clw==
+push.js@1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/push.js/-/push.js-1.0.12.tgz#5703a03f5d286cd46d58564cb27bc079898d26b1"
+  integrity sha512-Mo/zkrPD58hcbMvC/9WveUPGz0PJ4T5UwQJP6DnMYbyxe7b1xM/9qqmJTMmDcprbZjCtLzf9wWtek7gA8O9QBw==
 
 qs@6.7.0, qs@^6.4.0:
   version "6.7.0"
