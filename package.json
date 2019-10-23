@@ -53,7 +53,7 @@
     "push.js": "1.0.12"
   },
   "devDependencies": {
-    "@ember/optional-features": "1.0.0",
+    "@ember/optional-features": "1.1.0",
     "broccoli-asset-rev": "3.0.0",
     "ember-cli": "3.13.1",
     "ember-cli-dependency-checker": "3.2.0",
